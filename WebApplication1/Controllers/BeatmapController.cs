@@ -49,7 +49,7 @@ namespace WebApplication1.Controllers
                     Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await client.PostAsync(apiUrl, content);
-
+                                            
                 if (response.IsSuccessStatusCode)
                 {
                     return RedirectToAction(nameof(Index));
