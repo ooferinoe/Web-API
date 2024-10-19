@@ -45,7 +45,8 @@ namespace WebApplication1.Controllers
             string apiUrl = "https://localhost:7165/api/beatmap";
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(beatMaps), Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(beatMaps),
+                    Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await client.PostAsync(apiUrl, content);
 

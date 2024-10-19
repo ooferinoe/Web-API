@@ -1,0 +1,25 @@
+﻿@model DogPics
+
+@{
+    ViewData["Title"] = "Random Dog Pics";
+}
+
+<p style="color: aliceblue; text-align: center; font-family: Bahnschrift SemiBold;
+        font-size: 50px;">@ViewData["Title"]</p>
+
+<div class="text-center">
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+    <body style="background-color: #1c1719;">
+        <h2 style="color: aliceblue;text-align: center;">Here's a random dog pic.</h2>
+        <img src="@Model.message" alt="Random Dog Pic" class="center">
+        <br>
+        <p style="color: aliceblue; text-align: center;"><small>status: @Model.status</small></p>
+    </body>
+</div>

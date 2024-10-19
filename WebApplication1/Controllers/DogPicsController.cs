@@ -8,17 +8,23 @@ namespace WebApplication1.Controllers
     public class DogPicsController : Controller
     {
         // GET: DogPicsController
-        HttpClient client = new HttpClient();
+
         public async Task<ActionResult> Index()
         {
             string apiUrl = "https://dog.ceo/api/breeds/image/random";
-            var response = await client.GetAsync(apiUrl);
-            var dogPics = JsonConvert.DeserializeObject<DogPics>(response);
-            
+            DogPics dogPics = new DogPics();
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                var result = await response.Content.ReadAsStringAsync();
+                dogPics = JsonConvert.DeserializeObject<DogPics>(result);
+            }
 
             return View(dogPics);
         }
-    
+
         // GET: DogPicsController/Details/5
         public ActionResult Details(int id)
         {
