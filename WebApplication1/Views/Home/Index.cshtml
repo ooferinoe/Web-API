@@ -2,20 +2,32 @@
     ViewData["Title"] = "Home Page";
 }
 
-<body style="background-color: #1c1719;">
+<style>
+    body {
+        background-color: #1c1719;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .welcome {
+        color: aliceblue;
+        text-align: center;
+        font-family: Bahnschrift SemiBold;
+        font-size: 90px;
+        -webkit-box-reflect: below -50px linear-gradient(transparent, rgba(0,0,0,2))
+    }
+</style>
+
+
+<body>
     <div class="text-center">
-        <style>
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-            }
-        </style>
-    
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Osu%21_Logo_2016.svg/512px-Osu%21_Logo_2016.svg.png"
               alt="osu!" class="center">
-            <p style="color: aliceblue; text-align: center; font-family: Bahnschrift SemiBold;
-         font-size: 100px;">Welcome to osu!</p>
+            <p class="welcome">Welcome to osu!</p>
     </div>
 </body>
